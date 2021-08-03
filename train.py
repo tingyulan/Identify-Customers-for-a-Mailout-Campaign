@@ -92,6 +92,7 @@ def cleanNumerical(df, modes, create_modes=False, replaceNanVal=-1):
 
     return df, modes
 
+
 def cleanData(data_root, input_file_name, output_file_name, attr_val, modes, create_modes, flg_customers=False):
     df = pd.read_csv(os.path.join(data_root, input_file_name), sep=';')
     df = df.set_index(['LNR'])
@@ -104,6 +105,7 @@ def cleanData(data_root, input_file_name, output_file_name, attr_val, modes, cre
     df, modes = cleanCategorical(df, modes, create_modes)
     df.to_csv(os.path.join(data_root, output_file_name))
     return df, modes
+
 
 def loadCleanData(filename_postfix="", flg_azdias=True, flg_customers=True, flg_mailout_train=True, flg_mailout_test=True):
     azdias, customers, mailout_train, mailout_test = None, None, None, None
